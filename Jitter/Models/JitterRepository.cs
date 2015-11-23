@@ -22,7 +22,9 @@ namespace Jitter.Models
 
         public List<JitterUser> GetAllUsers()
         {
-            return null;
+            var query = from users in _context.JitterUsers select users; // this is just a table //b is just a variable name
+            // returning the same variable name return all colums in the table (like select *)
+            return query.ToList();
         }
     }
 }
