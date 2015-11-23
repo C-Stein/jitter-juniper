@@ -47,14 +47,13 @@ namespace Jitter.Tests.Models
         [TestMethod]
         public void JitterContextEnsureICanCreateInstance()
         {
-            JitterContext context = new JitterContext();
+            JitterContext context = mock_context.Object;
             Assert.IsNotNull(context);
         }
 
         [TestMethod]
         public void JitterRepositoryEnsureICanCreatInstance()
         {
-            JitterRepository repository = new JitterRepository();
             Assert.IsNotNull(repository);
         }
 
@@ -83,7 +82,6 @@ namespace Jitter.Tests.Models
         public void JitterRepositoryEnsureIHaveAContext()
         {
             // Arrange
-            JitterRepository repository = new JitterRepository();
             // Act
             var actual = repository.Context;
             // Assert
